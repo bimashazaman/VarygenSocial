@@ -1,0 +1,38 @@
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Build output
+/build
+
+# Log files
+*.log
+
+# Directory for compiled output
+/dist
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
+
+# React specific
+/public
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
