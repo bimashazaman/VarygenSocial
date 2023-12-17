@@ -9,6 +9,8 @@ import morgan from 'morgan'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import helmet from 'helmet'
+import authRoutes from './routes/auth.js'
+import { register } from './controllers/auth.js'
 
 // CONFIGURATIONS
 
@@ -79,6 +81,11 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage,
 })
+
+// ROUTES
+app.post('auth/register', upload.single('picture'), register)
+
+app.use('/auth', authRoutes)
 
 //DATABASE SETUP
 
