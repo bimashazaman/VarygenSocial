@@ -10,6 +10,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import helmet from 'helmet'
 import authRoutes from './routes/auth.js'
+import userRoutes from './routes/users.js'
 import { register } from './controllers/auth.js'
 
 // CONFIGURATIONS
@@ -86,6 +87,7 @@ const upload = multer({
 app.post('auth/register', upload.single('picture'), register)
 
 app.use('/auth', authRoutes)
+app.use('/users', userRoutes)
 
 //DATABASE SETUP
 
