@@ -1,4 +1,4 @@
-import User from '../models/User'
+import User from '../models/User.js'
 
 // Function to get a user by ID
 export const getUser = async (req, res) => {
@@ -75,6 +75,7 @@ export const addRemoveFriend = async (req, res) => {
 
     // Adding or removing the friend from the user's list
     const isAlreadyFriend = user.friends.includes(friendId)
+
     if (isAlreadyFriend) {
       user.friends.pull(friendId)
       friend.friends.pull(id)
