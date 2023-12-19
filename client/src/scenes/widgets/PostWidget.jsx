@@ -30,6 +30,8 @@ const PostWidget = ({
   const isLiked = Boolean(likes[loggedInUserId])
   const likeCount = Object.keys(likes).length
 
+  console.log(postUserId, 'fgfhrt')
+
   const { palette } = useTheme()
   const main = palette.neutral.main
   const primary = palette.primary.main

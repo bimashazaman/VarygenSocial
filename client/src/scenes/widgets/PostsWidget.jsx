@@ -38,7 +38,6 @@ const PostsWidget = ({ userId, isProfile = false }) => {
         posts.map(
           ({
             _id,
-            userId,
             firstName,
             lastName,
             description,

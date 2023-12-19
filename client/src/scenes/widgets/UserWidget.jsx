@@ -12,7 +12,8 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const UserWidget = ({ userId, picturePath }) => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({ friends: [] })
+
   const { palette } = useTheme()
   const navigate = useNavigate()
   const token = useSelector((state) => state.token)
@@ -71,7 +72,9 @@ const UserWidget = ({ userId, picturePath }) => {
             >
               {firstName} {lastName}
             </Typography>
-            <Typography color={medium}>{friends.length} friends</Typography>
+            <Typography color={medium}>
+              {friends?.length || 0} friends
+            </Typography>
           </Box>
         </FlexBetween>
         <ManageAccountsOutlined />

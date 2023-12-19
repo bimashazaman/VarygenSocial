@@ -38,15 +38,16 @@ const FriendListWidget = ({ userId }) => {
         Friend List
       </Typography>
       <Box display='flex' flexDirection='column' gap='1.5rem'>
-        {friends.map((friend) => (
-          <Friend
-            key={friend._id}
-            friendId={friend._id}
-            name={`${friend.firstName} ${friend.lastName}`}
-            subtitle={friend.occupation}
-            userPicturePath={friend.picturePath}
-          />
-        ))}
+        {Array.isArray(friends) &&
+          friends.map((friend) => (
+            <Friend
+              key={friend._id}
+              friendId={friend._id}
+              name={`${friend.firstName} ${friend.lastName}`}
+              subtitle={friend.occupation}
+              userPicturePath={friend.picturePath}
+            />
+          ))}
       </Box>
     </WidgetWrapper>
   )
